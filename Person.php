@@ -11,27 +11,33 @@ abstract class Person
 
   public function setfirstName($value)
   {
-    $this->$fname=$value;
+    $this->fname=$value;
   }
   public function setlastName($value)
   {
-    $this->$lname=$value;
+    $this->lname=$value;
   }
   public function setyearOfBirth($value)
   {
-    $this->$yobirth=$value;
+    $this->yobirth=$value;
   }
   public function getfirstName()
   {
-    return $this->$fname;
+    return $this->fname;
   }
   public function getlastName()
   {
-    return $this->$lname;
+    return $this->lname;
   }
   public function getyearOfBirth()
   {
-    return $this->$yobirth;
+    return $this->yobirth;
+  }
+  public function getAge()
+  {
+    $this_year=date("Y");
+    $age=$this_year - $this->getyearOfBirth();
+    return $age;
   }
 }
 
